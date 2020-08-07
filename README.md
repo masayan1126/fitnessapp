@@ -69,10 +69,6 @@ password:matsushin
 Training data for August
 August weight data
 
-# Note
-
-注意点などがあれば書く
-
 # Author
 - name
 @masayan1126
@@ -111,5 +107,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-# MyFitnessApp
-# fitness
