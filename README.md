@@ -4,7 +4,7 @@ This is Fitness management application
 
 # DEMO
 
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
+https://user-images.githubusercontent.com/67567293/89633852-61e62200-d8df-11ea-8815-68aa5ffd645c.gif
 
 # Features
 
