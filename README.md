@@ -4,7 +4,7 @@ This is Fitness management application
 
 # DEMO
 
-https://user-images.githubusercontent.com/67567293/89633852-61e62200-d8df-11ea-8815-68aa5ffd645c.gif
+![appdemo](https://user-images.githubusercontent.com/67567293/89637092-a4f6c400-d8e4-11ea-92bd-0045bdb5e84b.gif)
 
 # Features
 
