@@ -40,8 +40,8 @@ This is Fitness management application
 
 With node.js, npm and git installed run:
 
-git clone https://github.com/masayan1126/MyFitnessApp
-cd MyFitness
+git clone https://github.com/masayan1126/FitnessApp
+cd FitnessApp
 npm install
 npm run dev
 The application can then be accessed at http://localhost:8080.
@@ -52,7 +52,13 @@ npm run build
 
 # Usage
 
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
+- First, sign in
+  - If you do not have an account, please sign up
+- Record the workout content and weight of the day from the calendar
+- Various functions can be used from the navigation menu
+  - Choose your favorite music from the workout music menu
+  - You can easily check your target weight and profile from the My Data menu
+  - From the Analytics menu, you can check the changes in weight and calories burned each month.
 
 - Demo user
 name:matsushin
@@ -73,12 +79,9 @@ August weight data
 - email
 masa199311266@gmail.com
 
-# License
-
-
 # Test
 
-Layout verified browser
+## Layout verified browser
 - Google chrome
 - Safari
 - Google
