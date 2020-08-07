@@ -1,0 +1,82 @@
+<template>
+  <div class="signin mt-5">
+    <h2 class="mb-4">Sign in</h2>
+    <div class="sign-container p-5 shadow">
+      <div class="form-group mb-0">
+        <input type="email" class="col-12 sign-input-layout"
+        placeholder="e-mail" v-model="mail">
+        <input type="password" class="col-12 sign-input-layout"
+        placeholder="Password" v-model="password">
+        <button type="button" class="mt-3 sign-btn col-12 sign-input-layout
+        shadow" @click="signIn">Done</button>
+      </div>
+    </div>
+    <p class="mt-5"><router-link class="color-green" to="/signup">Create Account!!</router-link></p>
+  </div>
+</template>
+
+<script lang="ts">
+import firebase from 'firebase';
+import Vue from 'vue';
+
+export type DataType = {
+  mail: string,
+  password: string,
+  todayNumber: number,
+  expirationDay: number,
+}
+
+export default Vue.extend({
+  name: 'signin',
+  data():DataType {
+    return {
+      mail: '',
+      password: '',
+      todayNumber: 0,
+      expirationDay: 0,
+    };
+  },
+  created() {
+    const localSt = localStorage.getItem('signinData');
+    if (localSt) {
+      const todayObj = new Date();
+      // 1970年1月1日00:00:00UTCからの経過ミリ秒数
+      const today: number | null = todayObj.getTime();
+      this.todayNumber = today;
+      // JSON.parseは、JSON（文字列データをjavascriptで扱えるようにするメソッド）
+      // ローカルストレージの期限内なら、メールアドレスとパスをセットする
+      if (this.todayNumber < JSON.parse(localSt).expirationDay) {
+        this.mail = JSON.parse(localSt).mailAdress;
+        this.password = JSON.parse(localSt).password;
+      }
+    }
+  },
+  methods: {
+    signIn() {
+      firebase.auth().signInWithEmailAndPassword(this.mail, this.password).then(
+        (user) => {
+          alert('Success!');
+          this.$router.push('/calendar');
+          // 要修正
+          const userId = user.user.uid;
+          this.$store.state.auth = userId;
+          this.$store.state.navbarToggler = false;
+          // 604800秒は1週間
+          const expirationDay = this.todayNumber + 604800;
+          this.expirationDay = expirationDay;
+          // 型推論される
+          const signinData = {
+            mailAdress: this.mail,
+            password: this.password,
+            expirationDay: this.expirationDay,
+          };
+          localStorage.setItem('signinData', JSON.stringify(signinData));
+        },
+        (err) => {
+          alert(err.message);
+        },
+      );
+    },
+  },
+});
+</script>
