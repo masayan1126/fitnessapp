@@ -75,7 +75,7 @@ npm run build
 # Author
 - name
   - @masayan1126
-  - email
+- email
   - masa199311266@gmail.com
 
 # Test
