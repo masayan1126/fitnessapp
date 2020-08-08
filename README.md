@@ -64,19 +64,19 @@ npm run build
   - From the Analytics menu, you can check the changes in weight and calories burned each month.
 
 - Demo user
- - name:matsushin
- - mail:matsushin@gmail.com
- - password:matsushin
+  - name:matsushin
+  - mail:matsushin@gmail.com
+  - password:matsushin
 
 - Demo data
-Training data for August
-August weight data
+  - Training data for August
+  - August weight data
 
 # Author
 - name
- - @masayan1126
-- email
- - masa199311266@gmail.com
+  - @masayan1126
+  - email
+  - masa199311266@gmail.com
 
 # Test
 
