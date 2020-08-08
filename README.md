@@ -40,15 +40,18 @@ This is Fitness management application
 
 With node.js, npm and git installed run:
 
+```
 git clone https://github.com/masayan1126/FitnessApp
 cd FitnessApp
 npm install
 npm run dev
+```
 The application can then be accessed at http://localhost:8080.
 
 To create a production build on the gh-pages branch run:
-
+```
 npm run build
+```
 
 # Usage
 
@@ -61,9 +64,9 @@ npm run build
   - From the Analytics menu, you can check the changes in weight and calories burned each month.
 
 - Demo user
-name:matsushin
-mail:matsushin@gmail.com
-password:matsushin
+ - name:matsushin
+ - mail:matsushin@gmail.com
+ - password:matsushin
 
 - Demo data
 Training data for August
@@ -71,9 +74,9 @@ August weight data
 
 # Author
 - name
-@masayan1126
+ - @masayan1126
 - email
-masa199311266@gmail.com
+ - masa199311266@gmail.com
 
 # Test
 
