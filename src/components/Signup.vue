@@ -99,7 +99,6 @@ export default Vue.extend({
           const month = date.getMonth() + 1;
           const signupDate = `${year}-0${month}`;
           this.firstSignupDate = signupDate;
-          console.log(this.firstSignupDate);
         });
     },
     addProfile() {
@@ -113,14 +112,18 @@ export default Vue.extend({
       });
     },
     async addUserData() {
-      await this.signUp();
-      await setTimeout(() => {
-        this.addProfile();
-      }, 2000);
-      await setTimeout(() => {
-        this.$store.state.navbarToggler = false;
-        this.$router.push('/mydata');
-      }, 3000);
+      if (this.password.length < 6) {
+        alert('Password must be at least 6 characters');
+      } else {
+        await this.signUp();
+        await setTimeout(() => {
+          this.addProfile();
+        }, 2000);
+        await setTimeout(() => {
+          this.$store.state.navbarToggler = false;
+          this.$router.push('/mydata');
+        }, 3000);
+      }
     },
   },
 });

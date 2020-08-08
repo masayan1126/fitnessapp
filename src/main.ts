@@ -25,10 +25,6 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
-const VueTouch = require('vue-touch');
-
-Vue.use(VueTouch, { name: 'v-touch' });
-
 const firebaseConfig = {
   apiKey: 'AIzaSyDe5UEI4wiGxd7xG4Ow7znhA6f80j4Mg_M',
   authDomain: 'my-fitness-4624a.firebaseapp.com',
