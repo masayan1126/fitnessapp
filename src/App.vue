@@ -79,6 +79,7 @@ export default class App extends Vue {
   color: #2c3e50;
   min-height:100vh;
   background-color:#f2f3f3;
+  width: 100%;
 }
 
 .hide{
