@@ -43,6 +43,8 @@
 </template>
 
 <script lang="ts">
+import firebase from 'firebase';
+import 'firebase/firestore';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
@@ -61,6 +63,13 @@ export default class App extends Vue {
   private logout() {
     this.$store.state.navbarToggler = true;
     this.closeNav();
+    firebase.auth().signOut()
+      .then((user) => {
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   private loading() {
