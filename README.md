@@ -1,8 +1,8 @@
 # MyFitnessApp
-【en】
-This is Fitness management application
-【ja】
-(これはフィットネス管理アプリです)
+- 【en】
+  - This is Fitness management application
+- 【ja】
+  - これはフィットネス管理アプリです
 
 # DEMO
 ![appdemo](https://user-images.githubusercontent.com/67567293/89637092-a4f6c400-d8e4-11ea-92bd-0045bdb5e84b.gif)
