@@ -12,6 +12,7 @@
       </div>
     </div>
     <p class="mt-5"><router-link class="color-green" to="/signup">Create Account!!</router-link></p>
+    <p @click="testSignIn()"><i class="fas fa-user"></i>Sign in as a guest user</p>
   </div>
 </template>
 
@@ -76,6 +77,11 @@ export default Vue.extend({
           alert(err.message);
         },
       );
+    },
+    testSignIn() {
+      this.mail = 'matsushin@gmail.com';
+      this.password = 'matsushin';
+      this.signIn();
     },
   },
 });
