@@ -82,7 +82,6 @@ export default Vue.extend({
         .then((snapshot:any) => {
           const arr:any[] = snapshot.docs.map((doc:any) => doc.data());
           const dataDocs:any[] = arr.splice(0, this.number);
-          console.log(dataDocs.reverse());
           this.data.datasets[0].data = [];
           this.data.labels = [];
           dataDocs.forEach((data:any) => {

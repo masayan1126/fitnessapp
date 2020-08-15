@@ -79,7 +79,6 @@ export default Vue.extend({
       this.musicCollection.orderBy('created')
         .where('userId', '==', this.$store.state.auth).get()
         .then((querySnapshot: any) => {
-          console.log(querySnapshot);
           const idArr = querySnapshot.docs.map((doc: any) => doc.data().id);
           const titleArr = querySnapshot.docs.map((doc: any) => doc.data().title);
           for (let i = 0; i < idArr.length; i += 1) {

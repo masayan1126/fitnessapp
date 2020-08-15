@@ -61,13 +61,10 @@ export default Vue.extend({
           const signupYear = doc.data().signupDate.substr(0, 4);
           this.signupYear = signupYear;
           const signupMonth = doc.data().signupDate.substr(-2, 2);
-          console.log(signupMonth.substr(1, 1));
           if (signupMonth.substr(0, 1) === '0') {
             this.signupMonth = signupMonth.substr(-1, 1);
-            console.log(`0が先頭の場合${this.signupMonth}`);
           } else {
             this.signupMonth = signupMonth.substr(-2, 2);
-            console.log(`0が先頭でない場合${this.signupMonth}`);
           }
         });
       });
@@ -88,8 +85,6 @@ export default Vue.extend({
       // const dataObj = new Date();
       let year = Number(this.signupYear);
       let month = Number(this.signupMonth);
-      console.log(year);
-      console.log(month);
       this.$store.state.selectedMonth = `${year}-0${month}`;
       this.defaultMonth = `${year}-0${month}`;
       this.selectedMonth = `${year}-0${month}`;

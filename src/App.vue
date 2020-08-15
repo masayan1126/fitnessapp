@@ -62,6 +62,7 @@ export default class App extends Vue {
 
   private logout() {
     this.$store.state.navbarToggler = true;
+    this.$store.state.auth = '';
     this.closeNav();
     firebase.auth().signOut()
       .then((user) => {

@@ -93,7 +93,8 @@ export default Vue.extend({
       firebase.auth().createUserWithEmailAndPassword(this.mail, this.password)
         .then((user) => {
           alert('Success!');
-          this.$store.state.auth = user.user.uid;
+          const userId = user.user.uid;
+          this.$store.state.auth = userId;
           const date = new Date();
           const year = date.getFullYear();
           const month = date.getMonth() + 1;

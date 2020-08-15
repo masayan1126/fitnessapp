@@ -328,14 +328,11 @@ export default Vue.extend({
     },
     initWindow() {
       const fcRow = document.getElementsByClassName('fc-week');
-      console.log(fcRow[0].style.minHeight);
       const fcRowArray = Array.from(fcRow);
       fcRowArray.forEach((element) => {
         const row = element;
         row.style.minHeight = '3.5em';
-        console.log(row);
       });
-      console.log(fcRow[0].style);
       const calendarFlameBorder = document.getElementsByClassName('fc-view-container');
       calendarFlameBorder[0].classList.add('shadow');
       const calendarHeader = document.getElementsByClassName('fc-head');

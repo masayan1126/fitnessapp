@@ -55,11 +55,11 @@ export default Vue.extend({
     signIn() {
       firebase.auth().signInWithEmailAndPassword(this.mail, this.password).then(
         (user) => {
+          const userId = user.user.uid;
+          this.$store.state.auth = userId;
           alert('Success!');
           this.$router.push('/calendar');
           // 要修正
-          const userId = user.user.uid;
-          this.$store.state.auth = userId;
           this.$store.state.navbarToggler = false;
           // 604800秒は1週間
           const expirationDay = this.todayNumber + 604800;
