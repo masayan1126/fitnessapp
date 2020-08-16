@@ -21,6 +21,7 @@
       "navmenu_mydata": "Mydata",
       "navmenu_analytics": "Analytics",
       "navmenu_weight_analytics": "WeightAnalytics",
+      "navmenu_burnedcalories_analytics": "BurnedcaloriesAnalytics",
       "calendar_welcome": "Hello",
       "calendar_weight": "Weight",
       "calendar_workout": "Workout",
@@ -34,7 +35,12 @@
       "calendar_button_done": "Done",
       "calendar_button_update": "Update",
       "weather": "The weather is",
-      "weather_failure": "Couldn't get today's weather. please load again"
+      "mydata_title": "My Data",
+      "mydata_username": "Username",
+      "mydata_height": "Height",
+      "mydata_weight": "Weight",
+      "mydata_suitable_weight": "Suitable Weight",
+      "mydata_bmi": "BMI"
     }
   },
   "ja": {
@@ -73,7 +79,13 @@
       "calendar_button_done": "完了",
       "calendar_button_update": "更新",
       "weather": "今日の天気",
-      "weather_failure": "今日の天気を取得できませんでした。再読み込みしてください"
+      "weather_failure": "今日の天気を取得できませんでした。再読み込みしてください",
+      "mydata_title": "マイデータ",
+      "mydata_username": "ユーザーネーム",
+      "mydata_height": "身長",
+      "mydata_weight": "体重",
+      "mydata_suitable_weight": "適正体重",
+      "mydata_bmi": "BMI"
     }
   }
 }

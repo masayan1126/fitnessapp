@@ -7,6 +7,7 @@ import { Line } from 'vue-chartjs';
 export interface Chart2sub {
   db: any,
   fitnessCollection: any,
+  userProfileCollection: any,
   number: number,
   selectedMonth: string,
   data: any,
@@ -20,6 +21,7 @@ export default Vue.extend({
     return {
       db: null,
       fitnessCollection: null,
+      userProfileCollection: null,
       number: 31,
       selectedMonth: '',
       data: {
@@ -50,8 +52,7 @@ export default Vue.extend({
           }],
           yAxes: [{
             ticks: {
-              beginAtZero: true,
-              max: 100,
+              max: null,
               min: 44,
               stepSize: 1,
             },
@@ -65,8 +66,10 @@ export default Vue.extend({
     };
   },
   created() {
+    console.log(this.options.scales.yAxes[0].ticks.max);
     this.db = firebase.firestore();
     this.fitnessCollection = this.db.collection('My Fitness');
+    this.userProfileCollection = this.db.collection('userProfile');
   },
   mounted() {
     setTimeout(() => {
@@ -75,6 +78,13 @@ export default Vue.extend({
   },
   methods: {
     redraw() {
+      this.userProfileCollection
+        .where('userId', '==', this.$store.state.auth).get()
+        .then((snapshot:any) => {
+          snapshot.docs.forEach((doc:any) => {
+            this.options.scales.yAxes[0].ticks.max = doc.data().weight + 40;
+          });
+        });
       this.fitnessCollection.orderBy('date', 'desc').limit(this.number)
         .where('userId', '==', this.$store.state.auth)
         .where('month', '==', this.$store.state.selectedMonth)
@@ -88,6 +98,7 @@ export default Vue.extend({
             this.data.datasets[0].data.push(Number(data.weightData));
             this.data.labels.push(data.date.substring(8, 10));
           });
+          this.data.labels.reverse();
           setTimeout(() => {
             this.renderChart(this.data, this.options);
           }, 1000);

@@ -119,9 +119,9 @@ export default Vue.extend({
 
 <style scoped lang ="scss">
 .burned-calories-analytics{
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
-  max-width: 700px;
-  max-height: 700px;
+  max-width: 600px;
+  max-height: 500px;
 }
 </style>

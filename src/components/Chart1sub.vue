@@ -90,6 +90,7 @@ export default Vue.extend({
             this.data.datasets[0].data.push(Number(data.burnedCalories));
             this.data.labels.push(data.date.substring(8, 10));
           });
+          this.data.labels.reverse();
           setTimeout(() => {
             this.renderChart(this.data, this.options);
           }, 1000);

@@ -1,26 +1,26 @@
 <template>
   <div class="profile">
-    <h2 class="p-4 text-left">My Data</h2>
+    <h2 class="p-4 text-left">{{ $t("message.mydata_title") }}</h2>
     <div class="container text-left">
   <ul class="list-group shadow pt-4 pb-5">
     <li class="list-group-item d-flex justify-content-between align-items-center">
-      Username
+      {{ $t("message.mydata_username") }}
       <span class="color-green">{{ username }}</span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-     Height
+     {{ $t("message.mydata_height") }}
       <span class="color-green">{{ height }}cm</span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-      Weight
+      {{ $t("message.mydata_weight") }}
       <span class="color-green">{{ weight }}kg</span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-      Suitable Weight
+      {{ $t("message.mydata_suitable_weight") }}
       <span class="color-green">{{ standardWeight }}kg</span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-      BMI
+      {{ $t("message.mydata_bmi") }}
       <span class="color-green">{{ bodyMassIndex }}</span>
     </li>
   </ul>
