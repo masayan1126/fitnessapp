@@ -32,7 +32,9 @@
       "calendar_burnedcalories": "Burnedcalories",
       "calendar_button_close": "Close",
       "calendar_button_done": "Done",
-      "calendar_button_update": "Update"
+      "calendar_button_update": "Update",
+      "weather": "The weather is",
+      "weather_failure": "Couldn't get today's weather. please load again"
     }
   },
   "ja": {
@@ -69,7 +71,9 @@
       "calendar_burnedcalories": "消費カロリー",
       "calendar_button_close": "閉じる",
       "calendar_button_done": "完了",
-      "calendar_button_update": "更新"
+      "calendar_button_update": "更新",
+      "weather": "今日の天気",
+      "weather_failure": "今日の天気を取得できませんでした。再読み込みしてください"
     }
   }
 }

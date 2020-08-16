@@ -1,6 +1,6 @@
 <template>
 <transition appear>
-  <div class="weightanalytics mt-4">
+  <div class="weight-analytics mt-4">
     <h3 class="text-left ml-3 mb-4">Weight Analytics</h3>
     <div class="form-group">
       <select v-model="selectedMonth" @change="changeMonth(selectedMonth)"
@@ -118,3 +118,12 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped lang ="scss">
+.weight-analytics{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 700px;
+  max-height: 700px;
+}
+</style>

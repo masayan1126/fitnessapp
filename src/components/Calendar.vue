@@ -2,9 +2,9 @@
 <transition appear>
   <div class="calendar p-3" @click = "showModal($event)">
     <p class="text-right mb-1">{{ $t("message.calendar_welcome") }} <span>
-      <router-link class="color-green" to="/mydata">{{ userName }}</router-link></span></p>
+      <router-link class="color-green" to="/mydata">{{ userName }}</router-link></span> さん</p>
     <Weather/>
-    <FullCalendar :height="440" :locale="locale"
+    <FullCalendar :height="440"  :locale="locale"
     defaultView="dayGridMonth" :plugins="calendarPlugins" />
     <div class="container container-fluid mt-2">
       <div class = "modal text-left fade" id= "exampleModalCenter" tabindex="-1" role="dialog"
@@ -385,6 +385,12 @@ export default Vue.extend({
   height: 3em !important;
   height: 3em !important;
   background: orange;
+}
+
+.calendar{
+  max-width: 700px;
+  width: 95%;
+  margin: 0 auto;
 }
 
 </style>
