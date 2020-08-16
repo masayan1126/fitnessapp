@@ -26,13 +26,13 @@ export default Vue.extend({
         labels: [],
         datasets: [
           {
-            label: 'Changes in calorie consumption per month',
+            label: this.$i18n.t('message.burned_calories_analytics_label'),
             fill: true,
             data: [],
             borderColor: '#127681',
             borderWidth: 1,
             backgroundColor: [
-              'rgba(18, 118, 129, 0.8)',
+              'rgba(18, 118, 129, 0.6)',
             ],
             lineTension: 0,
           },
@@ -46,7 +46,7 @@ export default Vue.extend({
             },
             scaleLabel: {
               display: true,
-              labelString: 'date',
+              labelString: this.$i18n.t('message.burned_calories_analytics_date'),
             },
           }],
           yAxes: [{
@@ -58,7 +58,7 @@ export default Vue.extend({
             },
             scaleLabel: {
               display: true,
-              labelString: 'calorie',
+              labelString: this.$i18n.t('message.burned_calories_analytics_calorie'),
             },
           }],
         },

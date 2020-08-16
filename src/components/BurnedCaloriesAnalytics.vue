@@ -1,7 +1,7 @@
 <template>
   <transition appear>
     <div class="burned-calories-analytics mt-4">
-      <h3 class="text-left ml-3 mb-4">Burned Calories</h3>
+      <h3 class="text-left ml-3 mb-4">{{ $t("message.burned_calories_analytics_title") }}</h3>
       <div class="form-group">
         <select v-model="selectedMonth" @change="changeMonth(selectedMonth)"
         class="form-control float-right col-4 mr-4 mb-2 p-1"

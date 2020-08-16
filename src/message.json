@@ -40,7 +40,14 @@
       "mydata_height": "Height",
       "mydata_weight": "Weight",
       "mydata_suitable_weight": "Suitable Weight",
-      "mydata_bmi": "BMI"
+      "weight_analytics_title": "Weight Analytics",
+      "weight_analytics_label": "Changes in weight per month",
+      "weight_analytics_date": "Date",
+      "weight_analytics_weight": "Weight",
+      "burned_calories_analytics_title": "Burned Calories Analytics",
+      "burned_calories_analytics_label": "Changes in calories per month",
+      "burned_calories_analytics_date": "date",
+      "burned_calories_analytics_calorie": "calorie"
     }
   },
   "ja": {
@@ -85,7 +92,15 @@
       "mydata_height": "身長",
       "mydata_weight": "体重",
       "mydata_suitable_weight": "適正体重",
-      "mydata_bmi": "BMI"
+      "mydata_bmi": "BMI",
+      "weight_analytics_title": "統計(体重)",
+      "weight_analytics_label": "体重の1ヶ月の推移",
+      "weight_analytics_date": "日付",
+      "weight_analytics_weight": "体重",
+      "burned_calories_analytics_title": "統計(消費カロリー)",
+      "burned_calories_analytics_label": "消費カロリーの1ヶ月の推移",
+      "burned_calories_analytics_date": "日付",
+      "burned_calories_analytics_calorie": "消費カロリー"
     }
   }
 }

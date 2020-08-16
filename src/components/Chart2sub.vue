@@ -28,7 +28,7 @@ export default Vue.extend({
         labels: [],
         datasets: [
           {
-            label: 'Change in weight for one month',
+            label: this.$i18n.t('message.weight_analytics_label'),
             fill: true,
             data: [],
             borderColor: '#ffd700',
@@ -47,18 +47,18 @@ export default Vue.extend({
             },
             scaleLabel: {
               display: true,
-              labelString: 'date',
+              labelString: this.$i18n.t('message.weight_analytics_date'),
             },
           }],
           yAxes: [{
             ticks: {
               max: null,
-              min: 44,
+              min: null,
               stepSize: 1,
             },
             scaleLabel: {
               display: true,
-              labelString: 'weight',
+              labelString: this.$i18n.t('message.weight_analytics_weight'),
             },
           }],
         },
@@ -66,7 +66,6 @@ export default Vue.extend({
     };
   },
   created() {
-    console.log(this.options.scales.yAxes[0].ticks.max);
     this.db = firebase.firestore();
     this.fitnessCollection = this.db.collection('My Fitness');
     this.userProfileCollection = this.db.collection('userProfile');
@@ -82,7 +81,8 @@ export default Vue.extend({
         .where('userId', '==', this.$store.state.auth).get()
         .then((snapshot:any) => {
           snapshot.docs.forEach((doc:any) => {
-            this.options.scales.yAxes[0].ticks.max = doc.data().weight + 40;
+            this.options.scales.yAxes[0].ticks.max = doc.data().weight + 20;
+            this.options.scales.yAxes[0].ticks.min = doc.data().weight - 20;
           });
         });
       this.fitnessCollection.orderBy('date', 'desc').limit(this.number)
