@@ -1,18 +1,30 @@
 <template>
-  <div class="signin mt-5">
-    <h2 class="mb-4">Sign in</h2>
+  <div class="signin container-fluid mt-3">
+    <h2 class="mb-4 mt-5">{{ $t("message.signin_title") }}</h2>
     <div class="sign-container p-5 shadow">
       <div class="form-group mb-0">
-        <input type="email" class="col-12 sign-input-layout"
+        <input type="email" class="m-2 col-12 sign-input-layout"
         placeholder="e-mail" v-model="mail">
-        <input type="password" class="col-12 sign-input-layout"
+        <input type="password" class="m-2 col-12 sign-input-layout"
         placeholder="Password" v-model="password">
-        <button type="button" class="mt-3 sign-btn col-12 sign-input-layout
-        shadow" @click="signIn">Done</button>
+        <button type="button" class="m-2 sign-btn col-12 sign-input-layout
+        shadow" @click="signIn">{{ $t("message.signin_button_done") }}</button>
       </div>
     </div>
-    <p class="mt-5"><router-link class="color-green" to="/signup">Create Account!!</router-link></p>
-    <p @click="testSignIn()"><i class="fas fa-user"></i>Sign in as a guest user</p>
+    <p class="mt-5"><router-link class="color-green" to="/signup">
+    {{ $t("message.signin_link_create_account") }}</router-link></p>
+    <p class="mb-5" @click="testSignIn()"><i class="fas fa-user"></i>
+    {{ $t("message.signin_link_guest_user") }}</p>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active btn-sm">
+        <input @click="changeLanguageEn()" type="radio"
+        name="options" id="option1" autocomplete="off" checked>English
+      </label>
+      <label class="btn btn-secondary btn-sm">
+        <input @click="changeLanguageJa()"
+        type="radio" name="options" id="option2" autocomplete="off"> 日本語
+      </label>
+    </div>
   </div>
 </template>
 
@@ -82,6 +94,12 @@ export default Vue.extend({
       this.mail = 'matsushin@gmail.com';
       this.password = 'matsushin';
       this.signIn();
+    },
+    changeLanguageEn() {
+      this.$i18n.locale = 'en';
+    },
+    changeLanguageJa() {
+      this.$i18n.locale = 'ja';
     },
   },
 });

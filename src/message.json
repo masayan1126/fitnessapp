@@ -1,0 +1,18 @@
+{
+  "en":{
+    "message": {
+      "signin_title": "Sign in",
+      "signin_link_create_account": "Create Account",
+      "signin_button_done": "Done",
+      "signin_link_guest_user": "guest user"
+    }
+  },
+  "ja": {
+    "message": {
+      "signin_title": "サインイン",
+      "signin_link_create_account": "アカウントを作成する",
+      "signin_button_done": "完了",
+      "signin_link_guest_user": "ゲストユーザー"
+    }
+  }
+}

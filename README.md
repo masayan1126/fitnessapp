@@ -41,6 +41,7 @@
 - vue-router ^3.3.2
 - vue-youtube ^1.4.0
 - vuex ^3.4.0
+- vue-i18n^8.21.0
 
 # Installation
 With node.js, npm and git installed run:

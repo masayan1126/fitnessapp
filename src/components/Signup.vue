@@ -1,19 +1,19 @@
 <template>
-  <div class="signup mt-5">
-    <h2 class="mb-4">Sign up</h2>
+  <div class="signup container mt-3">
+    <h2 class="mb-4 mt-5">Sign up</h2>
     <div class="sign-container p-5 shadow">
       <div class="form-group mb-0 text-left">
-        <input type="text" class="col-12 sign-input-layout"
+        <input type="text" class="m-2 col-12 sign-input-layout"
         placeholder="username" v-model="username">
-        <input type="email" class="col-12 sign-input-layout"
+        <input type="email" class="m-2 col-12 sign-input-layout"
         placeholder="e-mail" v-model="mail">
-        <input type="password" class="col-12 sign-input-layout"
+        <input type="password" class="m-2 col-12 sign-input-layout"
         placeholder="Password" v-model="password">
-        <div class="row mb-2 mt-2">
+        <div class="row mt-1 ml-1">
           <div class="col-4">
             <label for="user-height" class="p-0 mt-2">Height</label>
           </div>
-          <div class="col-8 mb-2">
+          <div class="col-8 mb-1">
             <select v-model="selectedHeight" id="user-height"
               class="form-control shadow-sm">
               <option v-for="(height) in heightSelection" :key="height"
@@ -21,7 +21,7 @@
             </select>
           </div>
         </div>
-        <div class="row mb-3 mt-2">
+        <div class="row mt-1 ml-1 mb-1">
           <div class="col-4">
             <label for="user-weight" class="p-0 mt-2">Weight</label>
           </div>
@@ -33,12 +33,23 @@
             </select>
           </div>
         </div>
-        <button type="button" class="col-12 sign-btn shadow" @click="addUserData()">Done</button>
+        <button type="button" class="mt-3 col-12 sign-btn shadow"
+        @click="addUserData()">Done</button>
       </div>
     </div>
     <!-- containerここまで -->
-    <p class="mt-3">Do you have an account?</p>
-    <router-link class="color-green" to="/signin">Sign in now!!</router-link>
+    <p class="mt-5 mb-5"><router-link class="color-green" to="/signin">
+    Sign in here</router-link></p>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active btn-sm">
+        <input @click="changeLanguageEn()" type="radio"
+        name="options" id="option1" autocomplete="off" checked>English
+      </label>
+      <label class="btn btn-secondary btn-sm">
+        <input @click="changeLanguageJa()"
+        type="radio" name="options" id="option2" autocomplete="off"> 日本語
+      </label>
+    </div>
   </div>
 </template>
 

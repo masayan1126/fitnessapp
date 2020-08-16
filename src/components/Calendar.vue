@@ -1,7 +1,7 @@
 <template>
 <transition appear>
   <div class="calendar p-3" @click = "showModal($event)">
-    <p class="text-right mb-1">Hello <span>
+    <p class="text-right mb-1">{{ $t("message.explanation") }}<span>
       <router-link class="color-green" to="/mydata">{{ userName }}</router-link></span> !!</p>
     <Weather/>
     <FullCalendar :height="440" defaultView="dayGridMonth" :plugins="calendarPlugins" />

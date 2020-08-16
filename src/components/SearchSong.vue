@@ -74,6 +74,7 @@ export default Vue.extend({
     setTimeout(() => {
       searchForm!.focus();
     }, 3000);
+    console.log(this.songList);
   },
   methods: {
     playing(id: string, title: string) {
@@ -88,12 +89,14 @@ export default Vue.extend({
       this.count += 5;
     },
     async search() {
+      console.log(this.songList);
+      this.songList = [];
       const res = await
       fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${this.searchquery}&key=AIzaSyDENmeM9nK1AYLgE1xWl9ZUezZPTvXJYls&maxResults=50`);
       const json = await res.json();
       const jsonItems = await json.items;
-      const idArr = jsonItems.map((item: any) => item.id.videoId);
-      const titleArr = jsonItems.map((item :any) => item.snippet.title);
+      const idArr = await jsonItems.map((item: any) => item.id.videoId);
+      const titleArr = await jsonItems.map((item :any) => item.snippet.title);
       for (let i = 1; i <= idArr.length; i += 1) {
         const dataObj: SongObj = {
           id: `${idArr[i]}`,
@@ -135,16 +138,16 @@ export default Vue.extend({
     this.$store.dispatch('loading');
     this.db = firebase.firestore();
     this.musicCollection = this.db.collection('musicCollection');
-    this.idArray = [];
-    this.musicCollection.orderBy('created')
-      .where('userId', '==', this.$store.state.auth).get()
-      .then((querySnapshot: any) => {
-        const idArr: string[] = querySnapshot.docs.map((doc: any) => doc.data().id);
-        for (let i = 0; i <= idArr.length; i += 1) {
-          const id = idArr[i];
-          this.idArray.push(id);
-        }
-      });
+    // this.idArray = [];
+    // this.musicCollection.orderBy('created')
+    //   .where('userId', '==', this.$store.state.auth).get()
+    //   .then((querySnapshot: any) => {
+    //     const idArr: string[] = querySnapshot.docs.map((doc: any) => doc.data().id);
+    //     for (let i = 0; i <= idArr.length; i += 1) {
+    //       const id = idArr[i];
+    //       this.idArray.push(id);
+    //     }
+    //   });
   },
 });
 
