@@ -14,7 +14,14 @@
       "signup_height": "Height",
       "signup_weight": "Weight",
       "signup_button_done": "Done",
-      "signin_link_signin": "Sign in here"
+      "signin_link_signin": "Sign in here",
+      "navmenu_signout": "Signout",
+      "navmenu_calendar": "Calendar",
+      "navmenu_music": "Music",
+      "navmenu_mydata": "Mydata",
+      "navmenu_analytics": "Analytics",
+      "navmenu_weight_analytics": "WeightAnalytics",
+      "navmenu_burnedcalories_analytics": "BurnedCaloriesAnalytics"
     }
   },
   "ja": {
@@ -32,7 +39,14 @@
       "signup_height": "身長",
       "signup_weight": "体重",
       "signup_button_done": "完了",
-      "signin_link_signin": "サインインする"
+      "signin_link_signin": "サインインする",
+      "navmenu_signout": "サインアウト",
+      "navmenu_calendar": "カレンダー",
+      "navmenu_music": "ミュージック",
+      "navmenu_mydata": "マイデータ",
+      "navmenu_analytics": "データ分析",
+      "navmenu_weight_analytics": "体重データ分析",
+      "navmenu_burnedcalories_analytics": "消費カロリー分析"
     }
   }
 }

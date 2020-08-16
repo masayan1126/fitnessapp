@@ -12,27 +12,28 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li @click="logout()" class="nav-item active p-1"><router-link class="color-green" to="*">
-          Signout<span class="sr-only"></span></router-link></li>
+          {{ $t("message.navmenu_signout") }}<span class="sr-only"></span></router-link></li>
           <li @click="closeNav()" :click="loading()" class="nav-item p-1">
           <router-link class="color-green" to="/calendar">
-          Calendar<span class="sr-only"></span></router-link></li>
+          {{ $t("message.navmenu_calendar") }}<span class="sr-only"></span></router-link></li>
           <li @click="closeNav()" :click="loading()" class="nav-item p-1">
-          <router-link class="color-green" to="/music">Music
+          <router-link class="color-green" to="/music">{{ $t("message.navmenu_music") }}
           </router-link></li>
           <li @click="closeNav()" :click="loading()" class="nav-item p-1">
-          <router-link class="color-green" to="/mydata">Mydata
+          <router-link class="color-green" to="/mydata">{{ $t("message.navmenu_mydata") }}
           </router-link></li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown dropleft">
             <a class="nav-link dropdown-toggle p-1" href="#"
           id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">Analytics</a>
+          aria-haspopup="true" aria-expanded="false">{{ $t("message.navmenu_analytics") }}</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li @click="closeNav()"><router-link
-              class="dropdown-item color-green" to="/weightanalytics">WeightAnalytics
+              class="dropdown-item color-green" to="/weightanalytics">
+              {{ $t("message.navmenu_weight_analytics") }}
               </router-link></li>
               <li @click="closeNav()"><router-link
               class="dropdown-item color-green" to="/burnedcaloriesanalytics">
-              BurnedCaloriesAnalytics</router-link></li>
+              {{ $t("message.navmenu_burnedcalories_analytics") }}</router-link></li>
             </div>
           </li>
         </ul>
