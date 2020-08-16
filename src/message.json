@@ -21,7 +21,18 @@
       "navmenu_mydata": "Mydata",
       "navmenu_analytics": "Analytics",
       "navmenu_weight_analytics": "WeightAnalytics",
-      "navmenu_burnedcalories_analytics": "BurnedCaloriesAnalytics"
+      "calendar_welcome": "Hello",
+      "calendar_weight": "Weight",
+      "calendar_workout": "Workout",
+      "calendar_pushup": "Pushup",
+      "calendar_shoulder": "Shoulder",
+      "calendar_abs": "Abs",
+      "calendar_absroller": "Absroller",
+      "calendar_elliptical": "Elliptical",
+      "calendar_burnedcalories": "Burnedcalories",
+      "calendar_button_close": "Close",
+      "calendar_button_done": "Done",
+      "calendar_button_update": "Update"
     }
   },
   "ja": {
@@ -46,7 +57,19 @@
       "navmenu_mydata": "マイデータ",
       "navmenu_analytics": "データ分析",
       "navmenu_weight_analytics": "体重データ分析",
-      "navmenu_burnedcalories_analytics": "消費カロリー分析"
+      "calendar_welcome": "こんにちわ",
+      "navmenu_burnedcalories_analytics": "消費カロリー分析",
+      "calendar_weight": "体重",
+      "calendar_workout": "ワークアウト",
+      "calendar_pushup": "腕立て伏せ",
+      "calendar_shoulder": "肩トレ",
+      "calendar_abs": "腹筋",
+      "calendar_absroller": "腹筋ローラー",
+      "calendar_elliptical": "エリプティカル",
+      "calendar_burnedcalories": "消費カロリー",
+      "calendar_button_close": "閉じる",
+      "calendar_button_done": "完了",
+      "calendar_button_update": "更新"
     }
   }
 }

@@ -1,10 +1,11 @@
 <template>
 <transition appear>
   <div class="calendar p-3" @click = "showModal($event)">
-    <p class="text-right mb-1">{{ $t("message.explanation") }}<span>
-      <router-link class="color-green" to="/mydata">{{ userName }}</router-link></span> !!</p>
+    <p class="text-right mb-1">{{ $t("message.calendar_welcome") }} <span>
+      <router-link class="color-green" to="/mydata">{{ userName }}</router-link></span></p>
     <Weather/>
-    <FullCalendar :height="440" defaultView="dayGridMonth" :plugins="calendarPlugins" />
+    <FullCalendar :height="440" :locale="locale"
+    defaultView="dayGridMonth" :plugins="calendarPlugins" />
     <div class="container container-fluid mt-2">
       <div class = "modal text-left fade" id= "exampleModalCenter" tabindex="-1" role="dialog"
       aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
@@ -17,16 +18,16 @@
             <div class="row">
               <div class="col">
                 <div class="modal-body p-4">
-                  <label for="weight"><h5>WEIGHT</h5></label>
+                  <label for="weight"><h5>{{ $t("message.calendar_weight") }}</h5></label>
                   <select v-model.number="weight" class="form-control col-5 mb-4 shadow-sm"
                   id="weight"><span>kg</span>
                     <option disabled value="">Unselected</option>
                     <option v-for="(weight) in weightSelect" :key="weight.value"
                     :value="weight.value">{{ weight.number }}</option>
                   </select>
-                  <h5 class="mt-4" id="performance">WORKOUT</h5>
+                  <h5 class="mt-4" id="performance">{{ $t("message.calendar_workout") }}</h5>
                   <!-- pushup -->
-                  <label class="" for="pushup">Pushup</label>
+                  <label class="" for="pushup">{{ $t("message.calendar_pushup") }}</label>
                   <img class="img-resize" src=@/assets/pushup.png alt="">
                   <select v-model.number="pushUpSelected"
                   class="form-control col-5 mb-4 shadow-sm" name="" id="pushup">
@@ -36,7 +37,8 @@
                   </select>
                   <!-- pushup -->
                   <!-- shoulder -->
-                  <label class="" for="shoulder">Shoulder</label>
+                  <label class="" for="shoulder">
+                    {{ $t("message.calendar_shoulder") }}</label>
                   <img class="img-resize" src=@/assets/shoulder.png alt="">
                   <select v-model.number="shoulderSelected"
                   class="form-control col-5 mb-4 shadow-sm"
@@ -47,7 +49,7 @@
                   </select>
                   <!-- shoulder -->
                   <!-- abs -->
-                  <label class="" for="abs">Abs</label>
+                  <label class="" for="abs">{{ $t("message.calendar_abs") }}</label>
                   <img class="img-resize" src=@/assets/abs.png alt="">
                   <select v-model.number="absSelected"
                   class="form-control col-5 mb-4 shadow-sm"  name="" id="abs">
@@ -57,7 +59,7 @@
                   </select>
                   <!-- abs -->
                   <!-- absroller -->
-                  <label class="" for="absroller">AbsRoller</label>
+                  <label class="" for="absroller">{{ $t("message.calendar_absroller") }}</label>
                   <img class="img-resize" src=@/assets/absroller.png alt="">
                   <select v-model.number="absrollerSelected"
                   class="form-control col-5 mb-4 shadow-sm"  name="" id="absroller">
@@ -67,7 +69,7 @@
                   </select>
                   <!-- absroller -->
                   <!-- elliptical -->
-                  <label class="" for="elliptical">Elliptical</label>
+                  <label class="" for="elliptical">{{ $t("message.calendar_elliptical") }}</label>
                   <img class="img-resize" src=@/assets/elliptical.png alt="">
                   <select v-model.number="ellipticalSelected"
                   class="form-control col-5 mb-4 shadow-sm"  name="" id="elliptical">
@@ -76,16 +78,19 @@
                     :value="elliptical.value">{{ elliptical.number }}</option>
                   </select>
                   <p class="text-right">
-                    Calories burned:<b>{{ totalBurnedCalories }}</b>kcal</p>
+                  {{ $t("message.calendar_burnedcalories") }}:<b>
+                    {{ totalBurnedCalories }}</b>kcal</p>
                   <!-- elliptical -->
                 <div class="modal-footer">
                   <button type="button" @click="closeModal()"
-                  class="btn btn-secondary shadow" data-dismiss="modal">Close</button>
+                  class="btn btn-secondary shadow" data-dismiss="modal">
+                  {{ $t("message.calendar_button_close") }}</button>
                   <button @click ='addData()' type="button" id="addData"
-                  class="btn shadow btn-primary change-btn-color" data-dismiss="modal">Done</button>
+                  class="btn shadow btn-primary change-btn-color" data-dismiss="modal">
+                  {{ $t("message.calendar_button_done") }}</button>
                   <button @click ='updateData()' type="button" id="updateData"
                   class="btn shadow btn-primary hide change-btn-color"
-                  data-dismiss="modal">Update</button>
+                  data-dismiss="modal">{{ $t("message.calendar_button_update") }}</button>
                 </div>
               </div>
               </div>
@@ -104,6 +109,7 @@ import firebase from 'firebase';
 import 'firebase/firestore';
 import FullCalendar from '@fullcalendar/vue';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import jaLocale from '@fullcalendar/core/locales/ja'; // 日本語化用
 import Weather from './Weather.vue';
 
 export interface DataSelection {
@@ -137,6 +143,7 @@ export interface FitnessData {
   absrollerBurnedCaloriesOnce: number,
   ellipticalBurnedCaloriesOnce: number,
   calendarPlugins: any,
+  locale: any, // 日本語化
 }
 
 export default Vue.extend({
@@ -171,6 +178,7 @@ export default Vue.extend({
       absrollerBurnedCaloriesOnce: 0.7,
       ellipticalBurnedCaloriesOnce: 0.1,
       calendarPlugins: [dayGridPlugin],
+      locale: null, // 日本語化
     };
   },
   created() {
@@ -204,6 +212,9 @@ export default Vue.extend({
         number: `${i}kg`, value: i,
       };
       this.weightSelect.push(weightValue);
+    }
+    if (this.$i18n.locale === 'ja') {
+      this.locale = jaLocale;
     }
   },
   computed: {
