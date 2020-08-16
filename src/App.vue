@@ -138,7 +138,7 @@ iframe {
 .sign-container{
   background-color: rgb(237, 235, 235);
   width: 90%;
-  max-width: 450px;
+  max-width: 400px;
   margin: 0 auto;
 }
 

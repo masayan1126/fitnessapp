@@ -1,17 +1,18 @@
 <template>
   <div class="signup container mt-3">
-    <h2 class="mb-4 mt-5">Sign up</h2>
+    <h2 class="mb-4 mt-5">{{ $t("message.signup_title") }}</h2>
     <div class="sign-container p-5 shadow">
       <div class="form-group mb-0 text-left">
         <input type="text" class="m-2 col-12 sign-input-layout"
-        placeholder="username" v-model="username">
+        :placeholder="$t('message.signup_input_username')" v-model="username">
         <input type="email" class="m-2 col-12 sign-input-layout"
-        placeholder="e-mail" v-model="mail">
+        :placeholder="$t('message.signup_input_mail')" v-model="mail">
         <input type="password" class="m-2 col-12 sign-input-layout"
-        placeholder="Password" v-model="password">
+        :placeholder="$t('message.signup_input_password')" v-model="password">
         <div class="row mt-1 ml-1">
           <div class="col-4">
-            <label for="user-height" class="p-0 mt-2">Height</label>
+            <label for="user-height" class="p-0 mt-2">
+              {{ $t("message.signup_height") }}</label>
           </div>
           <div class="col-8 mb-1">
             <select v-model="selectedHeight" id="user-height"
@@ -23,7 +24,8 @@
         </div>
         <div class="row mt-1 ml-1 mb-1">
           <div class="col-4">
-            <label for="user-weight" class="p-0 mt-2">Weight</label>
+            <label for="user-weight" class="p-0 mt-2">
+              {{ $t("message.signup_weight") }}</label>
           </div>
           <div class="col-8">
             <select v-model="selectedWeight" id="user-weight"
@@ -34,12 +36,12 @@
           </div>
         </div>
         <button type="button" class="mt-3 col-12 sign-btn shadow"
-        @click="addUserData()">Done</button>
+        @click="addUserData()">{{ $t("message.signup_button_done") }}</button>
       </div>
     </div>
     <!-- containerここまで -->
     <p class="mt-5 mb-5"><router-link class="color-green" to="/signin">
-    Sign in here</router-link></p>
+    {{ $t("message.signin_link_signin") }}</router-link></p>
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
       <label class="btn btn-secondary active btn-sm">
         <input @click="changeLanguageEn()" type="radio"
@@ -136,6 +138,12 @@ export default Vue.extend({
           this.$router.push('/mydata');
         }, 3000);
       }
+    },
+    changeLanguageEn() {
+      this.$i18n.locale = 'en';
+    },
+    changeLanguageJa() {
+      this.$i18n.locale = 'ja';
     },
   },
 });

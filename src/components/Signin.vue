@@ -4,9 +4,9 @@
     <div class="sign-container p-5 shadow">
       <div class="form-group mb-0">
         <input type="email" class="m-2 col-12 sign-input-layout"
-        placeholder="e-mail" v-model="mail">
+        :placeholder="$t('message.signin_input_mail')" v-model="mail">
         <input type="password" class="m-2 col-12 sign-input-layout"
-        placeholder="Password" v-model="password">
+        :placeholder="$t('message.signin_input_password')" v-model="password">
         <button type="button" class="m-2 sign-btn col-12 sign-input-layout
         shadow" @click="signIn">{{ $t("message.signin_button_done") }}</button>
       </div>

@@ -2,17 +2,37 @@
   "en":{
     "message": {
       "signin_title": "Sign in",
+      "signin_input_mail": "E-mail",
+      "signin_input_password": "Password",
       "signin_link_create_account": "Create Account",
       "signin_button_done": "Done",
-      "signin_link_guest_user": "guest user"
+      "signin_link_guest_user": "guest user",
+      "signup_title": "Sign up",
+      "signup_input_username": "username",
+      "signup_input_mail": "E-mail",
+      "signup_input_password": "Password",
+      "signup_height": "Height",
+      "signup_weight": "Weight",
+      "signup_button_done": "Done",
+      "signin_link_signin": "Sign in here"
     }
   },
   "ja": {
     "message": {
       "signin_title": "サインイン",
+      "signin_input_mail": "メールアドレス",
+      "signin_input_password": "パスワード",
       "signin_link_create_account": "アカウントを作成する",
       "signin_button_done": "完了",
-      "signin_link_guest_user": "ゲストユーザー"
+      "signin_link_guest_user": "ゲストユーザー",
+      "signup_title": "サインアップ",
+      "signup_input_username": "ユーザーネーム",
+      "signup_input_mail": "メールアドレス",
+      "signup_input_password": "パスワード",
+      "signup_height": "身長",
+      "signup_weight": "体重",
+      "signup_button_done": "完了",
+      "signin_link_signin": "サインインする"
     }
   }
 }
