@@ -389,7 +389,7 @@ export default Vue.extend({
 
 .calendar{
   max-width: 700px;
-  width: 90%;
+  width: 100%;
 }
 
 </style>

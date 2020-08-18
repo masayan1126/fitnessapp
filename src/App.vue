@@ -139,7 +139,7 @@ iframe {
 .sign-container{
   max-width: 350px;
   background-color: rgb(237, 235, 235);
-  width: 40%;
+  width: 90%;
 }
 
 input {

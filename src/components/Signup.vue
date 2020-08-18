@@ -67,6 +67,7 @@ export interface Signup {
   uid: any,
   mail: string,
   password: string,
+  errorMessage: string | null,
   selectedHeight: number | null,
   selectedWeight: number | null,
   heightSelection: number[],
@@ -84,6 +85,7 @@ export default Vue.extend({
       uid: null,
       mail: '',
       password: '',
+      errorMessage: null,
       selectedHeight: null,
       selectedWeight: null,
       heightSelection: [],
@@ -113,6 +115,10 @@ export default Vue.extend({
           const month = date.getMonth() + 1;
           const signupDate = `${year}-0${month}`;
           this.firstSignupDate = signupDate;
+        })
+        .catch((error) => {
+          this.errorMessage = error.message;
+          console.log(this.errorMessage);
         });
     },
     addProfile() {
@@ -128,6 +134,11 @@ export default Vue.extend({
     async addUserData() {
       if (this.password.length < 6) {
         alert('Password must be at least 6 characters');
+      } else if (!this.mail.match(/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/)) {
+        alert('メールアドレスが不正です');
+      } else if (this.password.length < 6 && !this.mail.match(/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/)) {
+        alert('Password must be at least 6 characters');
+        alert('メールアドレスが不正です');
       } else {
         await this.signUp();
         await setTimeout(() => {
