@@ -3,7 +3,7 @@
     <h3 class="mb-4 text-left">Search results for「{{this.$store.state.artistName}}」</h3>
     <ul class="list-group">
       <transition-group appear>
-        <li class="list-group-item"
+        <li class="list-group-item mt-1"
           v-for="(song, index) in videoList" :key="song.id">{{song.title}}
           <youtube @playing="playing(song.id, song.title, index)"
           :video-id="song.id"/><button type="button" @click="addPlayList(song.id, song.title)"

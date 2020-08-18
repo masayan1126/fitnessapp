@@ -1,8 +1,8 @@
 <template>
   <transition appear>
-  <div class="searchsong m-4">
+  <div class="searchsong mx-auto mt-4">
     <h3 class="text-left mt-2">Search</h3>
-    <div class="input-group shadow-sm mt-3 mb-3">
+    <div class="input-group shadow-sm mt-3 mb-3 w-75 mx-auto">
       <input type="text" v-model="searchquery" id="search-form" class="form-control"
       placeholder="Search for YOUTUBE"
       aria-label="Recipient's username" aria-describedby="basic-addon2">
@@ -11,9 +11,9 @@
         <i class="fas fa-search"></i></span>
       </div>
     </div>
-    <ul class="list-group shadow">
+    <ul class="list-group">
       <transition-group appear>
-      <li class="list-group-item"
+      <li class="list-group-item mt-1"
         v-for="(song, index) in this.videoList"
         :key="song.id">{{song.title}}
         <youtube @playing="playing(song.id, song.title, index)"
@@ -74,7 +74,6 @@ export default Vue.extend({
     setTimeout(() => {
       searchForm!.focus();
     }, 3000);
-    console.log(this.songList);
   },
   methods: {
     playing(id: string, title: string) {
@@ -82,6 +81,8 @@ export default Vue.extend({
       localStorage.setItem('recentlySongDataList', JSON.stringify(this.recentlySongDataArr));
     },
     reloadVideo() {
+      console.log(this.songList);
+      console.log(this.videoList);
       const arr = this.songList.slice(this.count, this.count += 5);
       arr.forEach((video) => {
         this.videoList.push(video);
@@ -89,10 +90,11 @@ export default Vue.extend({
       this.count += 5;
     },
     async search() {
-      console.log(this.songList);
+      this.count = 5;
       this.songList = [];
+      this.videoList = [];
       const res = await
-      fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${this.searchquery}&key=AIzaSyDENmeM9nK1AYLgE1xWl9ZUezZPTvXJYls&maxResults=50`);
+      fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${this.searchquery}&key=AIzaSyDENmeM9nK1AYLgE1xWl9ZUezZPTvXJYls&maxResults=20`);
       const json = await res.json();
       const jsonItems = await json.items;
       const idArr = await jsonItems.map((item: any) => item.id.videoId);
@@ -152,3 +154,9 @@ export default Vue.extend({
 });
 
 </script>
+
+<style lang ="scss">
+.searchsong {
+  width: 80%;
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
   <transition appear>
-    <div class="burned-calories-analytics mt-4">
+    <div class="burned-calories-analytics mt-4 mx-auto">
       <h3 class="text-left ml-3 mb-4">{{ $t("message.burned_calories_analytics_title") }}</h3>
       <div class="form-group">
         <select v-model="selectedMonth" @change="changeMonth(selectedMonth)"
@@ -118,10 +118,4 @@ export default Vue.extend({
 </script>
 
 <style scoped lang ="scss">
-.burned-calories-analytics{
-  width: 95%;
-  margin: 0 auto;
-  max-width: 600px;
-  max-height: 500px;
-}
 </style>

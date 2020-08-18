@@ -40,6 +40,7 @@
       "mydata_height": "Height",
       "mydata_weight": "Weight",
       "mydata_suitable_weight": "Suitable Weight",
+      "mydata_bmi": "BMI",
       "weight_analytics_title": "Weight Analytics",
       "weight_analytics_label": "Changes in weight per month",
       "weight_analytics_date": "Date",
@@ -47,7 +48,13 @@
       "burned_calories_analytics_title": "Burned Calories Analytics",
       "burned_calories_analytics_label": "Changes in calories per month",
       "burned_calories_analytics_date": "date",
-      "burned_calories_analytics_calorie": "calorie"
+      "burned_calories_analytics_calorie": "Burned Calories",
+      "music_library": "Library",
+      "music_search": "Search",
+      "music_playlist": "Playlist",
+      "music_artistList": "ArtistList",
+      "music_recentlyplayed_true": "Recently played",
+      "music_recentlyplayed_false": "There are no recently played songs"
     }
   },
   "ja": {
@@ -100,7 +107,13 @@
       "burned_calories_analytics_title": "統計(消費カロリー)",
       "burned_calories_analytics_label": "消費カロリーの1ヶ月の推移",
       "burned_calories_analytics_date": "日付",
-      "burned_calories_analytics_calorie": "消費カロリー"
+      "burned_calories_analytics_calorie": "消費カロリー",
+      "music_library": "ライブラリ",
+      "music_search": "検索",
+      "music_playlist": "プレイリスト",
+      "music_artistList": "アーティスト一覧",
+      "music_recentlyplayed_true": "最近再生した曲",
+      "music_recentlyplayed_false": "最近再生した曲はありません"
     }
   }
 }

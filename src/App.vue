@@ -10,7 +10,7 @@
       aria-controls="navbarNavDropdown" aria-expanded = "false"
       aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" id="navbar-nav" :class="{ hide: $store.state.navbarToggler }">
           <li @click="logout()" class="nav-item active p-1"><router-link class="color-green" to="*">
           {{ $t("message.navmenu_signout") }}<span class="sr-only"></span></router-link></li>
           <li @click="closeNav()" :click="loading()" class="nav-item p-1">
@@ -94,7 +94,7 @@ export default class App extends Vue {
 }
 
 .hide{
-  display: none;
+  display: none !important;
 }
 
 a{
@@ -107,8 +107,8 @@ li{
 
 /* 共通のフレームサイズ設定 */
 iframe {
-  width: 100%;
-  height: 200px;
+  width: 90%;
+  height: 75%;
 }
 
 .v-enter-active, .v-leave-active {
@@ -137,10 +137,9 @@ iframe {
 }
 
 .sign-container{
+  max-width: 350px;
   background-color: rgb(237, 235, 235);
-  width: 90%;
-  max-width: 400px;
-  margin: 0 auto;
+  width: 40%;
 }
 
 input {

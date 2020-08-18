@@ -4,7 +4,7 @@
     <h2 class="text-left">PlayList</h2>
     <!-- <router-link to="/playlists">一覧へ</router-link> -->
     <ul class="list-group">
-      <li class="list-group-item"
+      <li class="list-group-item mt-1"
       v-for="(song, index) in playList"
       :key="song.id">{{song.title}}
       <youtube @playing="playing(song.id, song.title)"

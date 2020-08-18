@@ -1,7 +1,7 @@
 <template>
-  <div class="signin container-fluid mt-3">
-    <h2 class="mb-4 mt-5">{{ $t("message.signin_title") }}</h2>
-    <div class="sign-container p-5 shadow">
+  <div class="signin container-fluid mx-auto mt-5">
+    <h2 class="mb-4">{{ $t("message.signin_title") }}</h2>
+    <div class="sign-container mx-auto p-5 shadow">
       <div class="form-group mb-0">
         <input type="email" class="m-2 col-12 sign-input-layout"
         :placeholder="$t('message.signin_input_mail')" v-model="mail">

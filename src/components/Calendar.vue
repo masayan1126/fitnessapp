@@ -1,6 +1,6 @@
 <template>
 <transition appear>
-  <div class="calendar p-3" @click = "showModal($event)">
+  <div class="calendar mx-auto p-3" @click = "showModal($event)">
     <p class="text-right mb-1">{{ $t("message.calendar_welcome") }} <span>
       <router-link class="color-green" to="/mydata">{{ userName }}</router-link></span> さん</p>
     <Weather/>
@@ -11,7 +11,7 @@
       aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
-            <div class="modal-header pl-0 pt-2 pb-2 adjustment-width">
+            <div class="modal-header pl-2 pt-2 pb-2 adjustment-width">
               <h4 class="date modal-title" id="exampleModalCenterTitle">
               {{ date }}</h4>
             </div>
@@ -371,10 +371,10 @@ export default Vue.extend({
 @import '~@fullcalendar/core/main.css';
 @import '~@fullcalendar/daygrid/main.css';
 
-.adjustment-width{
-  width: 85%;
-  margin: 0 auto;
-}
+// .adjustment-width{
+//   width: 85%;
+//   margin: 0 auto;
+// }
 
 .img-resize{
   width: 12%;
@@ -389,8 +389,7 @@ export default Vue.extend({
 
 .calendar{
   max-width: 700px;
-  width: 100%;
-  margin: 0 auto;
+  width: 90%;
 }
 
 </style>

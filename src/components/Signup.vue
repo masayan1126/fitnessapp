@@ -1,7 +1,7 @@
 <template>
   <div class="signup container mt-3">
     <h2 class="mb-4 mt-5">{{ $t("message.signup_title") }}</h2>
-    <div class="sign-container p-5 shadow">
+    <div class="sign-container mx-auto p-5 shadow">
       <div class="form-group mb-0 text-left">
         <input type="text" class="m-2 col-12 sign-input-layout"
         :placeholder="$t('message.signup_input_username')" v-model="username">
