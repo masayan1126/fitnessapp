@@ -1,7 +1,7 @@
 <template>
   <transition appear>
   <div class="playlist m-3 mt-4">
-    <h2 class="text-left">PlayList</h2>
+    <h2 class="text-left mb-3">{{ $t("message.playlist_title") }}</h2>
     <!-- <router-link to="/playlists">一覧へ</router-link> -->
     <ul class="list-group">
       <li class="list-group-item mt-1"
@@ -10,7 +10,8 @@
       <youtube @playing="playing(song.id, song.title)"
       :video-id="song.id"/><p @click="removePlayList(song.id, index)"
       class="btn text-white btn-danger
-      mt-1 mb-1 shadow remove-playlist">Remove from Playlist</p></li>
+      mt-1 mb-1 shadow remove-playlist">{{ $t("message.playlist_button_remove") }}
+      </p></li>
     </ul>
     <Loading v-show="this.$store.state.loading"></Loading>
   </div>
@@ -70,7 +71,7 @@ export default Vue.extend({
           this.playList.slice(index, 1);
           const docIdArr = querySnapshot.docs.map((doc: any) => doc.id);
           this.musicCollection.doc(`${docIdArr[index]}`).delete();
-          alert('削除完了');
+          alert(this.$i18n.t('message.playlist_alert_remove'));
           this.showPlayList();
         });
     },

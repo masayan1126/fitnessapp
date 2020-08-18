@@ -54,7 +54,10 @@
       "music_playlist": "Playlist",
       "music_artistList": "ArtistList",
       "music_recentlyplayed_true": "Recently played",
-      "music_recentlyplayed_false": "There are no recently played songs"
+      "music_recentlyplayed_false": "There are no recently played songs",
+      "playlist_title": "PlayList",
+      "playlist_button_remove": "Remove from Playlist",
+      "playlist_alert_remove": "Delete complete"
     }
   },
   "ja": {
@@ -113,7 +116,10 @@
       "music_playlist": "プレイリスト",
       "music_artistList": "アーティスト一覧",
       "music_recentlyplayed_true": "最近再生した曲",
-      "music_recentlyplayed_false": "最近再生した曲はありません"
+      "music_recentlyplayed_false": "最近再生した曲はありません",
+      "playlist_title": "プレイリスト",
+      "playlist_button_remove": "プレイリストから削除する",
+      "playlist_alert_remove": "削除完了"
     }
   }
 }
