@@ -64,8 +64,8 @@ export default Vue.extend({
     this.userProfileCollection
       .where('userId', '==', this.$store.state.auth)
       .get()
-      .then((snapshot: any) => {
-        snapshot.docs.forEach((doc: any) => {
+      .then((querySnapshot: any) => {
+        querySnapshot.docs.forEach((doc: any) => {
           this.username = doc.data().userName;
           this.height = doc.data().height;
           this.weight = doc.data().weight;

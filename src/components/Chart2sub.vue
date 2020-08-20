@@ -79,8 +79,8 @@ export default Vue.extend({
     redraw() {
       this.userProfileCollection
         .where('userId', '==', this.$store.state.auth).get()
-        .then((snapshot:any) => {
-          snapshot.docs.forEach((doc:any) => {
+        .then((querySnapshot:any) => {
+          querySnapshot.docs.forEach((doc:any) => {
             this.options.scales.yAxes[0].ticks.max = doc.data().weight + 20;
             this.options.scales.yAxes[0].ticks.min = doc.data().weight - 20;
           });
@@ -89,8 +89,8 @@ export default Vue.extend({
         .where('userId', '==', this.$store.state.auth)
         .where('month', '==', this.$store.state.selectedMonth)
         .get()
-        .then((snapshot:any) => {
-          const arr:any[] = snapshot.docs.map((doc:any) => doc.data());
+        .then((querySnapshot:any) => {
+          const arr:any[] = querySnapshot.docs.map((doc:any) => doc.data());
           const dataDocs:any[] = arr.splice(0, this.number);
           this.data.datasets[0].data = [];
           this.data.labels = [];

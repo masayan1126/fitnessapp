@@ -2,7 +2,7 @@
   <transition appear>
   <div class="searchsong mx-auto mt-4">
     <h3 class="text-left mt-2">Search</h3>
-    <div class="input-group shadow-sm mt-3 mb-3 w-75 mx-auto">
+    <div class="input-group shadow-sm mt-3 mb-3 w-100 mx-auto">
       <input type="text" v-model="searchquery" id="search-form" class="form-control"
       placeholder="Search for YOUTUBE"
       aria-label="Recipient's username" aria-describedby="basic-addon2">
@@ -140,16 +140,6 @@ export default Vue.extend({
     this.$store.dispatch('loading');
     this.db = firebase.firestore();
     this.musicCollection = this.db.collection('musicCollection');
-    // this.idArray = [];
-    // this.musicCollection.orderBy('created')
-    //   .where('userId', '==', this.$store.state.auth).get()
-    //   .then((querySnapshot: any) => {
-    //     const idArr: string[] = querySnapshot.docs.map((doc: any) => doc.data().id);
-    //     for (let i = 0; i <= idArr.length; i += 1) {
-    //       const id = idArr[i];
-    //       this.idArray.push(id);
-    //     }
-    //   });
   },
 });
 

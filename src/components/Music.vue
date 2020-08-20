@@ -1,6 +1,6 @@
 <template>
   <transition appear>
-    <div class="music m-3 mt-4 mx-auto">
+    <div class="music mt-4 mx-auto">
       <h3 class="text-left mb-3">{{ $t("message.music_library") }}</h3>
       <ul class="list-group mb-4 text-left shadow-sm">
         <router-link class="color-green" to="/searchsong">
@@ -17,7 +17,7 @@
       <ul v-if="recentlySongDataArr.length" class="list-group recentlyplayed">
         <li class="list-group-item shadow recentlyplayed"
           v-for="(recentlySong) in recentlySongDataArr"
-          :key="recentlySong.id">{{recentlySong.title}}<youtube
+          :key="recentlySong.id"><youtube
           :video-id="recentlySong.id"/>
         </li>
       </ul>
@@ -70,20 +70,33 @@ export default Vue.extend({
 
 </script>
 
-<style lang ="scss">
+<style scoped lang  ="css">
 .music{
-  width: 70%;
+  width: 80%;
 }
 
 @media screen and (min-width: 481px) {
   .recentlyplayed {
-    height: 300px;
+    height: 200px;
+  }
+  iframe {
+    height: 400px;
   }
 }
 @media screen and (min-width: 769px) {
   .recentlyplayed {
-    height: 500px;
+    height: 400px;
+  }
+  iframe {
+    height: 100%;
   }
 }
+
+
+/* 共通のフレームサイズ設定 */
+/* iframe {
+  width: 100%;
+  height: 75%;
+} */
 
 </style>

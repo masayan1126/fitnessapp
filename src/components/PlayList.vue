@@ -1,17 +1,19 @@
 <template>
   <transition appear>
-  <div class="playlist m-3 mt-4">
+  <div class="playlist mx-auto mt-4 container">
     <h2 class="text-left mb-3">{{ $t("message.playlist_title") }}</h2>
     <!-- <router-link to="/playlists">一覧へ</router-link> -->
     <ul class="list-group">
-      <li class="list-group-item mt-1"
-      v-for="(song, index) in playList"
-      :key="song.id">{{song.title}}
-      <youtube @playing="playing(song.id, song.title)"
-      :video-id="song.id"/><p @click="removePlayList(song.id, index)"
-      class="btn text-white btn-danger
-      mt-1 mb-1 shadow remove-playlist">{{ $t("message.playlist_button_remove") }}
-      </p></li>
+      <div class="row justify-content-center">
+        <li class="d-block list-group-item m-1 music-list col-xs-12 col-sm-5 col-md-4 col-lg-3"
+        v-for="(song, index) in playList"
+        :key="song.id">
+        <youtube @playing="playing(song.id, song.title)"
+        :video-id="song.id"/><p @click="removePlayList(song.id, index)"
+        class="btn text-white btn-danger
+        mt-1 mb-1 shadow remove-playlist">{{ $t("message.playlist_button_remove") }}
+        </p></li>
+      </div>
     </ul>
     <Loading v-show="this.$store.state.loading"></Loading>
   </div>
@@ -106,3 +108,25 @@ export default Vue.extend({
 });
 
 </script>
+
+<style lang ="scss">
+.playlist {
+  width: 80%;
+}
+
+.music-list {
+  max-width: 350px;
+}
+
+/* @media screen and (min-width: 481px) {
+  .music-list {
+    height: 450px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .music-list {
+    height: 800px;
+  } */
+/* } */
+
+</style>

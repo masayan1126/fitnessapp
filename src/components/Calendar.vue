@@ -187,8 +187,8 @@ export default Vue.extend({
     this.userProfileCollection = this.db.collection('userProfile');
     this.userProfileCollection
       .where('userId', '==', this.$store.state.auth).get()
-      .then((snapshot:any) => {
-        snapshot.docs.forEach((doc:any) => {
+      .then((querySnapshot:any) => {
+        querySnapshot.docs.forEach((doc:any) => {
           this.userName = doc.data().userName;
         });
       });

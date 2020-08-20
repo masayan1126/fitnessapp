@@ -36,6 +36,14 @@ interface BurnedCaloriesAnalytics {
   signupMonth: string,
 }
 
+interface QuerySnapshot {
+  docs: [],
+  empty: boolean,
+  size: number,
+  query: any,
+  metadata: object,
+}
+
 export default Vue.extend({
   name: 'burnedcaloriesanalytics',
   components: {
@@ -57,8 +65,8 @@ export default Vue.extend({
     this.userProfileCollection = this.db.collection('userProfile');
     await this.userProfileCollection
       .where('userId', '==', this.$store.state.auth).get()
-      .then((snapshot:any) => {
-        snapshot.docs.forEach((doc:any) => {
+      .then((querySnapshot:any) => {
+        querySnapshot.docs.forEach((doc:any) => {
           const signupYear = doc.data().signupDate.substr(0, 4);
           this.signupYear = signupYear;
           const signupMonth = doc.data().signupDate.substr(-2, 2);

@@ -105,12 +105,6 @@ li{
   list-style: none;
 }
 
-/* 共通のフレームサイズ設定 */
-iframe {
-  width: 90%;
-  height: 75%;
-}
-
 .v-enter-active, .v-leave-active {
   transition: opacity .5s
 }
@@ -140,6 +134,11 @@ iframe {
   max-width: 350px;
   background-color: rgb(237, 235, 235);
   width: 90%;
+}
+
+iframe {
+  width: 100%;
+  height: 75%;
 }
 
 input {

@@ -81,8 +81,8 @@ export default Vue.extend({
         .where('userId', '==', this.$store.state.auth)
         .where('month', '==', this.$store.state.selectedMonth)
         .get()
-        .then((snapshot:any) => {
-          const arr = snapshot.docs.map((doc:any) => doc.data());
+        .then((querySnapshot:any) => {
+          const arr = querySnapshot.docs.map((doc:any) => doc.data());
           const dataDocs = arr.splice(0, this.number);
           this.data.datasets[0].data = [];
           this.data.labels = [];

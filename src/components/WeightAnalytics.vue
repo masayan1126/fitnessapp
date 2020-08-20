@@ -53,11 +53,13 @@ export default Vue.extend({
   },
   async created() {
     this.db = firebase.firestore();
+    console.log(this.db);
     this.userProfileCollection = this.db.collection('userProfile');
     await this.userProfileCollection
       .where('userId', '==', this.$store.state.auth).get()
-      .then((snapshot:any) => {
-        snapshot.docs.forEach((doc:any) => {
+      .then((querySnapshot:any) => {
+        console.log(querySnapshot);
+        querySnapshot.docs.forEach((doc:any) => {
           const signupYear = doc.data().signupDate.substr(0, 4);
           this.signupYear = signupYear;
           const signupMonth = doc.data().signupDate.substr(-2, 2);
