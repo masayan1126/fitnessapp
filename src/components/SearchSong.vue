@@ -1,6 +1,6 @@
 <template>
   <transition appear>
-  <div class="searchsong mx-auto mt-4">
+  <div class="searchsong mx-auto mt-4 container-fluied">
     <h3 class="text-left mt-2">Search</h3>
     <div class="input-group shadow-sm mt-3 mb-3 w-100 mx-auto">
       <input type="text" v-model="searchquery" id="search-form" class="form-control"
@@ -13,13 +13,15 @@
     </div>
     <ul class="list-group">
       <transition-group appear>
-      <li class="list-group-item mt-1"
+      <div class="row justify-content-center">
+      <li class="d-block list-group-item m-2 music-list col-xs-12 col-sm-5 col-md-4 col-lg-3"
         v-for="(song, index) in this.videoList"
         :key="song.id">{{song.title}}
         <youtube @playing="playing(song.id, song.title, index)"
         :video-id="song.id"/><button type="button" @click="addPlayList(song.id, song.title)"
         class="btn text-white btn-danger mt-1 mb-1 add-playlist shadow">Add to playlist
         </button></li>
+      </div>
       </transition-group>
     </ul>
       <Loading v-show="this.$store.state.loading"></Loading>
@@ -147,6 +149,6 @@ export default Vue.extend({
 
 <style lang ="scss">
 .searchsong {
-  width: 80%;
+  width: 90%;
 }
 </style>

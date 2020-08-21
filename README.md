@@ -42,6 +42,7 @@
 - vue-youtube ^1.4.0
 - vuex ^3.4.0
 - vue-i18n^8.21.0
+- vuex-persistedstate ^3.1.0
 
 # Installation
 With node.js, npm and git installed run:
