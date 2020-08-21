@@ -1,8 +1,8 @@
 <template>
   <transition appear>
-    <div class="music mt-4 mx-auto">
+    <div class="music container-fluied mt-4 mx-auto">
       <h3 class="text-left mb-3">{{ $t("message.music_library") }}</h3>
-      <ul class="list-group mb-4 text-left shadow-sm">
+      <ul class="list-group mb-4 text-left shadow-sm music-menu">
         <router-link class="color-green" to="/searchsong">
           <li class="list-group-item pt-3 pb-3">{{ $t("message.music_search") }}</li>
         </router-link>
@@ -18,7 +18,10 @@
         <li class="list-group-item shadow recentlyplayed"
           v-for="(recentlySong) in recentlySongDataArr"
           :key="recentlySong.id"><youtube
-          :video-id="recentlySong.id"/>
+          :video-id="recentlySong.id"/><p @click="removePlayList(song.id, index)"
+        class="btn text-white btn-danger
+        mt-1 mb-1 shadow remove-playlist">{{ $t("message.playlist_button_remove") }}
+        </p>
         </li>
       </ul>
       <ul class="list-group recentlyplayed" v-else>
@@ -70,33 +73,66 @@ export default Vue.extend({
 
 </script>
 
-<style scoped lang  ="css">
+<style lang ="css" scoped>
 .music{
-  width: 80%;
+  max-width: 590px;
+  width: 90%;
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (max-width:480px) {
   .recentlyplayed {
-    height: 200px;
+    height: 250px;
+    max-width: 100%;
   }
-  iframe {
-    height: 400px;
+  .music-menu{
+    max-width: 100%;
   }
 }
-@media screen and (min-width: 769px) {
+
+@media screen and (min-width: 480px) and (max-width:768px) {
+  .recentlyplayed {
+    height: 300px;
+    max-width: 100%;
+  }
+  .music-menu{
+    max-width: 100%;
+  }
+  .remove-playlist{
+    height: 50px;
+    line-height: 35px;
+  }
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px) {
   .recentlyplayed {
     height: 400px;
+    max-width: 100%;
   }
-  iframe {
-    height: 100%;
+  .music-menu{
+    max-width: 100%;
+  }
+  .remove-playlist{
+    height: 60px;
+    line-height: 45px;
+    width: 200px;
+    font-size: 18px;
   }
 }
 
-
-/* 共通のフレームサイズ設定 */
-/* iframe {
-  width: 100%;
-  height: 75%;
-} */
+@media screen and (min-width:1024px) {
+  .recentlyplayed {
+    height: 500px;
+    max-width: 100%;
+  }
+  .music-menu{
+    max-width: 100%;
+  }
+  .remove-playlist{
+    height: 80px;
+    line-height: 70px;
+    width: 250px;
+    font-size: 22px;
+  }
+}
 
 </style>

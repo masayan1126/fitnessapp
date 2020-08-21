@@ -362,6 +362,10 @@ export default Vue.extend({
     },
   },
   mounted() {
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      this.$router.push('/signin');
+    }
     this.initWindow();
   },
 });

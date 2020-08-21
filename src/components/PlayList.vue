@@ -1,11 +1,11 @@
 <template>
   <transition appear>
-  <div class="playlist mx-auto mt-4 container">
+  <div class="playlist mx-auto mt-4 container-fluied">
     <h2 class="text-left mb-3">{{ $t("message.playlist_title") }}</h2>
     <!-- <router-link to="/playlists">一覧へ</router-link> -->
     <ul class="list-group">
       <div class="row justify-content-center">
-        <li class="d-block list-group-item m-1 music-list col-xs-12 col-sm-5 col-md-4 col-lg-3"
+        <li class="d-block list-group-item m-2 music-list col-xs-12 col-sm-5 col-md-4 col-lg-3"
         v-for="(song, index) in playList"
         :key="song.id">
         <youtube @playing="playing(song.id, song.title)"
@@ -109,13 +109,20 @@ export default Vue.extend({
 
 </script>
 
-<style lang ="scss">
+<style lang ="css">
+
+iframe {
+  width: 100%;
+  height: 75%;
+}
+
 .playlist {
-  width: 80%;
+  width: 90%;
 }
 
 .music-list {
   max-width: 350px;
+  min-width: 220px;
 }
 
 /* @media screen and (min-width: 481px) {

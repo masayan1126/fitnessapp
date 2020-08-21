@@ -136,11 +136,6 @@ li{
   width: 90%;
 }
 
-iframe {
-  width: 100%;
-  height: 75%;
-}
-
 input {
   font-size:18px;
   // transform: scale(0.8);
