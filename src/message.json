@@ -6,6 +6,7 @@
       "signin_input_password": "Password",
       "signin_link_create_account": "Create Account",
       "signin_button_done": "Done",
+      "signin_alert_login_successful": "Login successful",
       "signin_link_guest_user": "guest user",
       "signup_title": "Sign up",
       "signup_input_username": "username",
@@ -63,7 +64,11 @@
       "searchsong_button_reload": "Next 5",
       "searchsong_alert_alreadyadd": "Sorry Already added",
       "searchsong_alert_addcomplete": "Add complete!",
-      "artistList_title": "ArtistList"
+      "artistList_title": "ArtistList",
+      "song_button_addplaylist": "Add to playlist",
+      "song_button_reload": "Next 5",
+      "song_alert_alreadyadd": "Sorry Already added",
+      "song_alert_addcomplete": "Add complete!"
     }
   },
   "ja": {
@@ -74,6 +79,7 @@
       "signin_link_create_account": "アカウントを作成する",
       "signin_button_done": "完了",
       "signin_link_guest_user": "ゲストユーザー",
+      "signin_alert_login_successful": "ログイン成功",
       "signup_title": "サインアップ",
       "signup_input_username": "ユーザーネーム",
       "signup_input_mail": "メールアドレス",
@@ -131,7 +137,11 @@
       "searchsong_button_reload": "次の5件",
       "searchsong_alert_alreadyadd": "すでにプレイリストに追加済みです",
       "searchsong_alert_addcomplete": "追加完了!",
-      "artistList_title": "アーティストリスト"
+      "artistList_title": "アーティストリスト",
+      "song_button_addplaylist": "プレイリストに追加",
+      "song_button_reload": "Next 5",
+      "song_alert_alreadyadd": "すでにプレイリストに追加済みです",
+      "song_alert_addcomplete": "追加完了!"
     }
   }
 }

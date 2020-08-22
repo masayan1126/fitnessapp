@@ -1,18 +1,23 @@
 <template>
-  <div class="songlist m-3 mt-4">
-    <h3 class="mb-4 text-left">Search results for「{{this.$store.state.artistName}}」</h3>
+  <div class="songlist mx-auto mt-4 container-fluied">
+    <h3 class="mb-4 text-left">{{this.$store.state.artistName}}</h3>
     <ul class="list-group">
-      <transition-group appear>
-        <li class="list-group-item mt-1"
-          v-for="(song, index) in videoList" :key="song.id">{{song.title}}
+      <transition appear>
+        <div class="row justify-content-center">
+        <li class="d-block list-group-item m-2 music-list col-xs-12 col-sm-5 col-md-4 col-lg-3"
+          v-for="(song, index) in videoList" :key="song.id">
           <youtube @playing="playing(song.id, song.title, index)"
           :video-id="song.id"/><button type="button" @click="addPlayList(song.id, song.title)"
-          class="btn text-white btn-danger mt-1 mb-1 add-playlist shadow">Add to playlist
-          </button></li>
-      </transition-group>
+          class="btn text-white btn-danger mt-1 mb-1 add-playlist shadow">
+          {{ $t("message.song_button_addplaylist") }}
+          </button>
+        </li>
+        </div>
+      </transition>
     </ul>
     <Loading v-show="this.$store.state.loading"></Loading>
-    <p class="m-3" @click="reloadVideo()"><i class="fas fa-sync-alt"></i>Next 5</p>
+    <p class="m-3" @click="reloadVideo()"><i class="fas fa-sync-alt"></i>
+    {{ $t("message.song_button_reload") }}</p>
   </div>
 </template>
 
@@ -72,7 +77,7 @@ export default Vue.extend({
     },
     addPlayList(id: string, title: string) {
       if (this.idArray.includes(id)) {
-        alert('Sorry Already added');
+        alert(this.$i18n.t('message.song_alert_alreadyadd'));
       } else {
         this.musicCollection.add({
           created: firebase.firestore.FieldValue.serverTimestamp(),
@@ -82,7 +87,7 @@ export default Vue.extend({
           userId: this.$store.state.auth,
         })
           .then((snapshot: any) => {
-            alert('Add complete!');
+            alert(this.$i18n.t('message.song_alert_addcomplete'));
             const documentSnapshot = this.musicCollection.doc(`${snapshot.id}`);
             documentSnapshot.get()
               .then((doc: any) => {
@@ -119,3 +124,9 @@ export default Vue.extend({
 });
 
 </script>
+
+<style lang ="scss">
+.songlist {
+  width: 90%;
+}
+</style>

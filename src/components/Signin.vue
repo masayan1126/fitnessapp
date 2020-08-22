@@ -69,7 +69,7 @@ export default Vue.extend({
     signIn() {
       firebase.auth().signInWithEmailAndPassword(this.mail, this.password).then(
         (user) => {
-          alert('Success!');
+          alert(this.$i18n.t('message.signin_alert_login_successful'));
           const userId = user.user.uid;
           this.$store.state.auth = userId;
           console.log(this.$store.state.auth);

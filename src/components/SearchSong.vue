@@ -2,7 +2,7 @@
   <transition appear>
   <div class="searchsong mx-auto mt-4 container-fluied">
     <h3 class="text-left mt-2">{{ $t("message.searchsong_title") }}</h3>
-    <div class="input-group shadow-sm mt-3 mb-3 w-100 mx-auto">
+    <div class="input-group shadow-sm mt-3 mb-3 w-75 mx-auto">
       <input type="text" v-model="searchquery" id="search-form" class="form-control"
       placeholder="Search for YOUTUBE"
       aria-label="Recipient's username" aria-describedby="basic-addon2">
