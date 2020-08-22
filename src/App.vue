@@ -77,6 +77,19 @@ export default class App extends Vue {
   private loading() {
     this.$store.state.loading = true;
   }
+
+  updateAuth(user) {
+    this.$store.dispatch('updateAuth', user);
+  }
+
+  created() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // ログインしたときに実行するメソッド
+        this.updateAuth(user);
+      }
+    });
+  }
 }
 
 </script>

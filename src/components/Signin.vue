@@ -8,7 +8,7 @@
         <input type="password" class="m-2 col-12 sign-input-layout"
         :placeholder="$t('message.signin_input_password')" v-model="password">
         <button type="button" class="m-2 sign-btn col-12 sign-input-layout
-        shadow" @click="signIn">{{ $t("message.signin_button_done") }}</button>
+        shadow" @click="signIn()">{{ $t("message.signin_button_done") }}</button>
       </div>
     </div>
     <p class="mt-5"><router-link class="color-green" to="/signup">
@@ -30,6 +30,7 @@
 
 <script lang="ts">
 import firebase from 'firebase';
+import 'firebase/firestore';
 import Vue from 'vue';
 
 export type DataType = {
@@ -68,15 +69,16 @@ export default Vue.extend({
     signIn() {
       firebase.auth().signInWithEmailAndPassword(this.mail, this.password).then(
         (user) => {
+          alert('Success!');
           const userId = user.user.uid;
           this.$store.state.auth = userId;
-          alert('Success!');
-          this.$router.push('/calendar');
+          console.log(this.$store.state.auth);
           // 要修正
           this.$store.state.navbarToggler = false;
           // 604800秒は1週間
           const expirationDay = this.todayNumber + 604800;
           this.expirationDay = expirationDay;
+          // window.localStorage.removeItem('vuex');
           // 型推論される
           const signinData = {
             mailAdress: this.mail,
@@ -84,9 +86,9 @@ export default Vue.extend({
             expirationDay: this.expirationDay,
           };
           localStorage.setItem('signinData', JSON.stringify(signinData));
-        },
-        (err) => {
-          alert(err.message);
+          setTimeout(() => {
+            this.$router.push('/calendar');
+          }, 2000);
         },
       );
     },

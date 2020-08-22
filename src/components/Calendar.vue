@@ -110,6 +110,7 @@ import 'firebase/firestore';
 import FullCalendar from '@fullcalendar/vue';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import jaLocale from '@fullcalendar/core/locales/ja'; // 日本語化用
+import { mapActions } from 'vuex';
 import Weather from './Weather.vue';
 
 export interface DataSelection {
@@ -182,6 +183,12 @@ export default Vue.extend({
     };
   },
   created() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // ログインしたときに実行するメソッド
+        this.updateAuth(user);
+      }
+    });
     this.db = firebase.firestore();
     this.fitnessCollection = this.db.collection('My Fitness');
     this.userProfileCollection = this.db.collection('userProfile');
@@ -360,12 +367,9 @@ export default Vue.extend({
       updBtn!.style.backgroundColor = '#f3c623';
       updBtn!.style.borderColor = '#f3c623';
     },
+    ...mapActions(['updateAuth']),
   },
   mounted() {
-    const user = firebase.auth().currentUser;
-    if (!user) {
-      this.$router.push('/signin');
-    }
     this.initWindow();
   },
 });

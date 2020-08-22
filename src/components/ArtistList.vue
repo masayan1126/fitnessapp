@@ -1,6 +1,6 @@
 <template>
   <div class="artistList m-3 mt-4">
-    <h2 class="mt-2 text-left">ArtistList</h2>
+    <h2 class="mt-2 text-left">ArtistList{{ $t("message.playlist_title") }}</h2>
     <ul class="list-group text-left">
       <router-link class="color-green" to="/song"><li @click="selectArtist($event)"
       class="list-group-item" v-for="(artist)
