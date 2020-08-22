@@ -88,7 +88,7 @@ export default Vue.extend({
           localStorage.setItem('signinData', JSON.stringify(signinData));
           setTimeout(() => {
             this.$router.push('/calendar');
-          }, 2000);
+          }, 1000);
         },
       );
     },

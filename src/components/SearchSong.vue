@@ -1,7 +1,7 @@
 <template>
   <transition appear>
   <div class="searchsong mx-auto mt-4 container-fluied">
-    <h3 class="text-left mt-2">Search{{ $t("message.searchsong_title") }}</h3>
+    <h3 class="text-left mt-2">{{ $t("message.searchsong_title") }}</h3>
     <div class="input-group shadow-sm mt-3 mb-3 w-100 mx-auto">
       <input type="text" v-model="searchquery" id="search-form" class="form-control"
       placeholder="Search for YOUTUBE"
@@ -12,22 +12,23 @@
       </div>
     </div>
     <ul class="list-group">
-      <transition-group appear>
+      <transition appear>
       <div class="row justify-content-center">
       <li class="d-block list-group-item m-2 music-list col-xs-12 col-sm-5 col-md-4 col-lg-3"
         v-for="(song, index) in this.videoList"
         :key="song.id">
         <youtube @playing="playing(song.id, song.title, index)"
         :video-id="song.id"/><button type="button" @click="addPlayList(song.id, song.title)"
-        class="btn text-white btn-danger mt-1 mb-1 add-playlist shadow">Add to playlist
+        class="btn text-white btn-danger mt-1 mb-1 add-playlist shadow">
         {{ $t("message.searchsong_button_addplaylist") }}
         </button></li>
       </div>
-      </transition-group>
+      </transition>
     </ul>
       <Loading v-show="this.$store.state.loading"></Loading>
       <p class="m-3 hide" id="reload" @click="reloadVideo()">
-        <i id="reload-icon" class="fas fa-sync-alt"></i>Next 5{{ $t("message.searchsong_button_reload") }}</p>
+        <i id="reload-icon" class="fas fa-sync-alt"></i>
+        {{ $t("message.searchsong_button_reload") }}</p>
 </div>
   </transition>
 </template>
@@ -116,7 +117,7 @@ export default Vue.extend({
     },
     addPlayList(id: string, title: string) {
       if (this.idArray.includes(id)) {
-        alert(this.$i18n.t('Sorry Already addedmessage.searchsong_alert_alreadyadd'));
+        alert(this.$i18n.t('message.searchsong_alert_alreadyadd'));
       } else {
         this.musicCollection.add({
           created: firebase.firestore.FieldValue.serverTimestamp(),
@@ -126,7 +127,7 @@ export default Vue.extend({
           userId: this.$store.state.auth,
         })
           .then((snapshot: any) => {
-            alert(this.$i18n.t('Add complete!message.searchsong_alert_addcomplete'));
+            alert(this.$i18n.t('message.searchsong_alert_addcomplete'));
             const documentSnapshot = this.musicCollection.doc(`${snapshot.id}`);
             documentSnapshot.get()
               .then((doc: any) => {

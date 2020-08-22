@@ -57,7 +57,13 @@
       "music_recentlyplayed_false": "There are no recently played songs",
       "playlist_title": "PlayList",
       "playlist_button_remove": "Remove from Playlist",
-      "playlist_alert_remove": "Delete complete"
+      "playlist_alert_remove": "Delete complete",
+      "searchsong_title": "Search",
+      "searchsong_button_addplaylist": "Add to playlist",
+      "searchsong_button_reload": "Next 5",
+      "searchsong_alert_alreadyadd": "Sorry Already added",
+      "searchsong_alert_addcomplete": "Add complete!",
+      "artistList_title": "ArtistList"
     }
   },
   "ja": {
@@ -119,7 +125,13 @@
       "music_recentlyplayed_false": "最近再生した曲はありません",
       "playlist_title": "プレイリスト",
       "playlist_button_remove": "プレイリストから削除する",
-      "playlist_alert_remove": "削除完了"
+      "playlist_alert_remove": "削除完了",
+      "searchsong_title": "検索する",
+      "searchsong_button_addplaylist": "プレイリストに追加",
+      "searchsong_button_reload": "次の5件",
+      "searchsong_alert_alreadyadd": "すでにプレイリストに追加済みです",
+      "searchsong_alert_addcomplete": "追加完了!",
+      "artistList_title": "アーティストリスト"
     }
   }
 }
