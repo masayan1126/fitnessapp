@@ -1,6 +1,7 @@
 # FitnessApp
 【English】
 - This is Fitness management application
+
 【日本語】
 - これはフィットネス管理アプリです
 
