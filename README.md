@@ -1,21 +1,21 @@
 # MyFitnessApp
-- 【en】
+- 【English】
   - This is Fitness management application
-- 【ja】
+- 【日本語】
   - これはフィットネス管理アプリです
 
 # DEMO
 ![appdemo](https://user-images.githubusercontent.com/67567293/89637092-a4f6c400-d8e4-11ea-92bd-0045bdb5e84b.gif)
 
 # Features
-【en】
+【English】
 - Easy daily fitness record from calendar and Real-time measurement of calories burned
 - Supports outdoor workouts such as jogging Because it will inform you of today's weather
 - You can use your youtube api to select your favorite workout music and have a full playlist function
 - You can calculate your target weight when you sign up and check it from the My Data screen at any time.
 - Analyze and analyze changes in calorie consumption and body weight calculated from daily fitness records with monthly line graphs
 
-【ja】
+【日本語】
 - カレンダーから毎日のフィットネスデータが容易に記録でき、消費カロリーのリアルタイム測定/登録も可能です
 - 今日の天気を簡単に確認できるので、ジョギングなどのアウトドアトレーニングが可能かをすぐに把握できます
 - YouTube APIを使用して、お気に入りのワークアウト音楽を選択してモチベーションの向上に貢献します。また、あなただけのプレイリスト機能を使用することができます
@@ -61,7 +61,7 @@ npm run build
 ```
 
 # Usage
-【en】
+【English】
 - First, sign in
   - If you do not have an account, please sign up
 - Record the workout content and weight of the day from the calendar
@@ -70,7 +70,7 @@ npm run build
   - You can easily check your target weight and profile from the My Data menu
   - From the Analytics menu, you can check the changes in weight and calories burned each month.
 
-【ja】
+【日本語】
 - まず、サインインします
   - アカウントをお持ちでない場合は、サインアップしてください
 - カレンダーから日々のワークアウトの内容とその日の体重を記録します
