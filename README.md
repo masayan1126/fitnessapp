@@ -61,6 +61,7 @@ npm run build
 ```
 
 # Usage
+【en】
 - First, sign in
   - If you do not have an account, please sign up
 - Record the workout content and weight of the day from the calendar
@@ -68,6 +69,15 @@ npm run build
   - Choose your favorite music from the workout music menu
   - You can easily check your target weight and profile from the My Data menu
   - From the Analytics menu, you can check the changes in weight and calories burned each month.
+
+【ja】
+- まず、サインインします
+  - アカウントをお持ちでない場合は、サインアップしてください
+- カレンダーから日々のワークアウトの内容とその日の体重を記録します
+- ナビゲーションメニューからさまざまな機能を使用できます
+  - ワークアウトの音楽メニューからお気に入りの音楽を選択します
+  - My Dataメニューから目標体重とプロファイルを簡単に確認できます
+  - 分析メニューから、毎月の体重と消費カロリーの変化を確認できます
 
 - Demo user
   - name:matsushin

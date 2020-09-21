@@ -1,5 +1,5 @@
 <template>
-  <div class="artistList m-3 mt-4">
+  <div class="artistList container-fluied mt-4 mx-auto">
     <h2 class="mt-2 text-left">{{ $t("message.artistList_title") }}</h2>
     <ul class="list-group text-left">
       <router-link class="color-green" to="/song"><li @click="selectArtist($event)"
@@ -70,3 +70,9 @@ export default Vue.extend({
 });
 
 </script>
+
+<style lang ="css">
+.artistList {
+  max-width: 590px;
+}
+</style>

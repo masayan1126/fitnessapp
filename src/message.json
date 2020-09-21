@@ -130,7 +130,7 @@
       "music_recentlyplayed_true": "最近再生した曲",
       "music_recentlyplayed_false": "最近再生した曲はありません",
       "playlist_title": "プレイリスト",
-      "playlist_button_remove": "プレイリストから削除する",
+      "playlist_button_remove": "プレイリストから削除",
       "playlist_alert_remove": "削除完了",
       "searchsong_title": "検索する",
       "searchsong_button_addplaylist": "プレイリストに追加",
